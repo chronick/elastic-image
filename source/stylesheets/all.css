@@ -6,17 +6,15 @@ body {
   width: 100%;
   height: 100%;
 }
-section {
-  -webkit-perspective: 300;
-  perspective: 300;
-  width: 100%;
+img {
+  position: absolute;
+  width: 100px;
+
+  transition: left 2s ease-in-out;
+  transition: top 2s ease-in-out;
+  transition: width 2s ease-in-out;
 }
-article {
-/*  -webkit-transform: rotateX(45deg);
-  transform: rotateX(45deg);
-*/}
+
 p {
-  margin: 0 auto;
-  text-align: center;
-  max-width: 640px;
+  color: white;
 }
