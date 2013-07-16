@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var smooth = function(val) {
 
-    if (Math.abs(val) >= 0.4) {
+    if (Math.abs(val) >= 0) {
       return val;
     }
     else {
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
   };
 
   window.addEventListener('devicemotion', function(event){
-    x = smooth(event.accelerationIncludingGravity.x);
-    y = smooth(event.accelerationIncludingGravity.y);
-    z = smooth(event.accelerationIncludingGravity.z);
+    x = smooth(event.acceleration.x);
+    y = smooth(event.acceleration.y);
+    z = smooth(event.acceleration.z);
 
     if (Math.abs(z) > 0){
       logo.style.width = (150 + (z * 5)).toString() + "px";
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-    // document.getElementById('a-x').innerHTML = 'x' + event.accelerationIncludingGravity.x.toString();
-    // document.getElementById('a-y').innerHTML = 'y' + event.accelerationIncludingGravity.y.toString();
-    // document.getElementById('a-z').innerHTML = 'z' + event.accelerationIncludingGravity.z.toString();
+    // document.getElementById('a-x').innerHTML = 'x' + smooth(event.acceleration.x).toString();
+    // document.getElementById('a-y').innerHTML = 'y' + smooth(event.acceleration.y).toString();
+    // document.getElementById('a-z').innerHTML = 'z' + smooth(event.acceleration.z).toString();
 
   });
 
